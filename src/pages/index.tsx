@@ -3,12 +3,19 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import Container from '@/Tags/Container/Container'
 import styled from "styled-components"
+import { Grid } from '@mui/material'
+import Paper from '@mui/material/Paper'
+import Header from '@/Components/Adminpannel/Header/Header'
+
  
  
 const inter = Inter({ subsets: ['latin'] })
 
+
 export default function Home() {
   const Main=styled.main``
+
+  
   return (
     <>
       <Head>
@@ -18,7 +25,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <Main>
-        <Container>Hellow world</Container>
+     
+        <Container>
+        <Header />
+      </Container>
        </Main>
     </>
   )
