@@ -3,3 +3,119 @@
     padding: 0;
     margin: 0;
   }
+
+  .padding_common
+  {
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+
+  .img_responsive
+  {
+    width: 30%;
+  }
+
+  .img_responsive_full
+  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .decoration_link
+  {
+    text-decoration: none;
+    color: black;
+    font-size: 85%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+  }
+
+  .simple_decoration_link
+  {
+    text-decoration: none;
+    color: black;
+  }
+  .simple_decoration_link:hover
+  {
+    text-decoration: none;
+    color: black;
+  }
+
+  .padding_left_right_low
+  {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .padding_left_right_low_details
+  {
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .background_card_img
+  {
+    background-color: black;
+  }
+
+  .bg_card
+  {
+    background-color: #F2F2F2;
+    padding: 4%;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+
+  .img_border
+  {
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+  }
+
+  .shadow_box
+  {
+    border-radius: 7px;
+    box-shadow: 0 2px 7px rgb(0 0 0 / 15%);
+  }
+
+  .btn_style_red
+  {
+    background-color: #DC0000;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 7px;
+  }
+
+  .text_des_details
+  {
+    font-size: 90%;
+    font-weight: 400;
+    padding-bottom: 3%;
+    color: gray;
+  }
+
+  .span_1
+  {
+    color: red !important;
+    font-size: 90%;
+  }
+
+  .span_2
+  {
+    color: gray !important;
+    font-size: 90%;
+    font-weight: 600;
+  }
+
+  .img_logo_width
+  {
+    width: 8%;
+    padding-left: 1%;
+  }
+
+  .display_overflow_hidden
+  {
+    overflow-x: hidden;
+  }

@@ -1,0 +1,113 @@
+{
+    "Team": [
+      
+      {
+        "id":"1",
+        "title": "Tailoring",
+        "path":"/",
+        "image": "../images/1.webp"
+    },
+    {
+        "id":"2",
+        "title": "Cleaning",
+        "path":"/",
+        "image": "../images/2.webp"
+    },
+    {
+        "id":"3",
+        "title": "Electrical",
+        "path":"/",
+        "image": "../images/00.webp"
+    },
+    {
+        "id":"4",
+        "title": "Plumbing",
+        "path":"/",
+        "image": "../images/3.webp"
+    },
+    {
+        "id":"5",
+        "title": "Builder",
+        "path":"/",
+        "image": "../images/4.webp"
+    },
+    {
+        "id":"6",
+        "title": "Tradesmen",
+        "path":"/",
+        "image": "../images/5.webp"
+    },
+    {
+        "id":"7",
+        "title": "Security",
+        "path":"/",
+        "image": "../images/6.webp"
+    },
+    {
+        "id":"8",
+        "title": "Marketing",
+        "path":"/",
+        "image": "../images/111.webp"
+    },
+    {
+        "id":"9",
+        "title": "Photography",
+        "path":"/",
+        "image": "../images/112.webp"
+    },
+    {
+        "id":"10",
+        "title": "IT",
+        "path":"/",
+        "image": "../images/8.webp"
+    },
+    {
+        "id":"11",
+        "title": "Rentals",
+        "path":"/",
+        "image": "../images/9.webp"
+    },
+    {
+        "id":"12",
+        "title": "Beauty",
+        "path":"/",
+        "image": "../images/10.webp"
+    },
+    {
+        "id":"13",
+        "title": "Name",
+        "path":"/",
+        "image": "../images/11.webp"
+    }
+      
+    ],
+    "Tailoring": 
+    [
+        {
+            "id":"1",
+            "title":"Mens Tailoring",
+            "image":"../images/man.webp"
+        },
+        {
+            "id":"2",
+            "title":"Woman Tailoring",
+            "image":"../images/woman.webp"
+        }, 
+        {
+            "id":"3",
+            "title":"Mens Tailoring",
+            "image":"../images/man.webp"
+        },
+        {
+            "id":"4",
+            "title":"Woman Tailoring",
+            "image":"../images/woman.webp"
+        }
+    ],
+    "Details":
+    {
+        "title":"Mens Tailoring",
+        "price": "1900",
+        "description":"Say goodbye to inconvenient trips to the tailor. Get your clothes stitched from the comfort of your home or office. We pick up your unstitched clothes and a dress for the measurement from your doorstep. Just book the available slot today and get your outfit ready within a week."
+    }
+  }

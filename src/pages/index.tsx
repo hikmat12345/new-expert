@@ -1,18 +1,16 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import Container from '@/Tags/Container/Container'
 import styled from "styled-components"
-import { Grid } from '@mui/material'
-import Paper from '@mui/material/Paper'
-import Header from '@/Components/Adminpannel/Header/Header'
 
  
  
 const inter = Inter({ subsets: ['latin'] })
 
 
-export default function Home() {
+
+export default function Home(posts:any) {
+
   const Main=styled.main``
 
   
@@ -27,7 +25,7 @@ export default function Home() {
       <Main>
      
         <Container>
-        <Header />
+       Home page
       </Container>
        </Main>
     </>

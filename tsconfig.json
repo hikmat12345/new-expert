@@ -29,7 +29,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/pages/Industries/index.tsx", "src/pages/Industries/Catagories/Catagories.tsx"  ],
   "exclude": [
     "node_modules"
   ]
