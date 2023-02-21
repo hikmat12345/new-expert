@@ -1,11 +1,24 @@
-import React from 'react'
-import styled from "styled-components"
+import React from 'react' 
+import styled, { css } from 'styled-components'
 
-function Button({children, ...rest}:{children:any}) {
+ 
+
+function Button({children}:{children:any}) {
  
   const Button = styled.button`
-  font-family:"poppins"
-    `
+  background: red;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: '#fff';
+  margin: 0 1em;
+  padding: 0.25em 1em;
+  font-family:'poppins';
+  ${props => props &&
+    css`
+      background: red;
+      color: white;
+    `};
+`
   return (
     <Button>
       {children}
