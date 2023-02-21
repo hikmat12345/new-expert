@@ -23,8 +23,13 @@
     "next": "13.1.6",
     "next-i18next": "^13.1.5",
     "react": "18.2.0",
+    "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "react-otp-input": "^2.4.0",
+    "react-phone-input-2": "^2.15.1",
     "react-redux": "^8.0.5",
+    "react18-input-otp": "^1.1.2",
     "styled-components": "^5.3.6",
     "typescript": "4.9.5"
   },

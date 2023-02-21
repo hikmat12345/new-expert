@@ -109,5 +109,28 @@
         "title":"Mens Tailoring",
         "price": "1900",
         "description":"Say goodbye to inconvenient trips to the tailor. Get your clothes stitched from the comfort of your home or office. We pick up your unstitched clothes and a dress for the measurement from your doorstep. Just book the available slot today and get your outfit ready within a week."
-    }
+    },
+    "ListingInd" :
+    [
+        {
+            "id":"1",
+            "title":"Shalwar Kameez (Simple)",
+            "price":"1900"
+        },
+        {
+            "id":"2",
+            "title":"Shalwar Kameez (Double Stitching)",
+            "price":"2100"
+        },
+        {
+            "id":"3",
+            "title":"Shalwar Kameez (Khaddar/Karandi)",
+            "price":"2100"
+        },
+        {
+            "id":"4",
+            "title":"Khaddar/Karandi with Double Stitching",
+            "price":"2300"
+        }
+    ]
   }

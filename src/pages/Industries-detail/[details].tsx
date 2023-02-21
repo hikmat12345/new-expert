@@ -45,6 +45,7 @@ export default function Details() {
       
         <div className='col-md-12 display_overflow_hidden  '>
             <Header />
+            
             <div className="row ">
                 <div className='col-md-6'>
                     <img className='img-fluid' src='../images/man.webp' />
@@ -53,7 +54,7 @@ export default function Details() {
                     <h3>{JsonData.Details.title}</h3>
                     <p><span className='span_1'>From</span>&nbsp;&nbsp;&nbsp; <span className='span_2'> Rs.{JsonData.Details.price} </span></p>
                     <p className='text_des_details'>{JsonData.Details.description}</p>
-                    <button className='btn btn-danger btn-sm btn_style_red'> Book Now </button>
+                    <Link className='simple_decoration_link' href={`/Industries-listing/1`}> <button className='btn btn-danger btn-sm btn_style_red'> Book Now </button> </Link>
                 </div>
             </div>
         </div>

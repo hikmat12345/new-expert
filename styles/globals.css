@@ -1,7 +1,8 @@
-* {
+body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    background-color: #F4F4F4;
   }
 
   .padding_common
@@ -119,3 +120,210 @@
   {
     overflow-x: hidden;
   }
+
+  .padding_left_right_listing
+  {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .width_img_loading
+  {
+    width: 80%;
+    border-radius: 10px;
+  }
+
+  .background_card_white
+  {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 10px rgba(211, 211, 211, 0.312);
+    cursor: pointer;
+  }
+
+  .padding_top_equal_booking_page
+  {
+    padding-top: 10%;
+    overflow-x: hidden;
+  }
+
+
+  .padding_top_equal_booking_page1
+  {
+    padding-top: 5%;
+    overflow-x: hidden;
+  }
+  .display_flex_booking
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center !important;
+  text-align: center;
+  align-content: center;
+  justify-content: center !important;
+}
+
+.react-tel-input .form-control
+{
+  width: 100% !important;
+}
+
+
+.text_mobile_booking
+{
+  font-size: 85%;
+  font-weight: 600;
+}
+
+.background_booking_button
+{
+  background-color: #DC0000;
+}
+
+.input_class input
+{
+  width: 100% !important;
+  /* height: 8vh; */
+  font-size: 170%;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 12px 12px rgba(211, 211, 211, 0.196);
+}
+
+.background_otp_button
+{
+  background-color: #DC0000;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.input_otp_p
+{
+  font-size: 85%;
+}
+
+.display_flex_input
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.btn_style_input
+{
+  background-color: white;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.btn_style_input:focus
+{
+  border-radius: 0px;
+  background-color: white;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.btn_style_input:hover
+{
+  border-radius: 0px;
+  background-color: white;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.form_input_style
+{
+  border-radius: 0px;
+  border: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.form_input_style:focus
+{
+  box-shadow: none;
+  outline: none;
+  border-radius: 0px;
+  border: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.form_input_style
+{
+  box-shadow: none;
+  outline: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 0px;
+}
+
+
+
+
+.form_input_style1
+{
+  background-color: white;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+
+.form_btn_style2
+{
+  background-color: white;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.display_flex_radio
+{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.form-check-input[type=radio] {
+  border-radius: 50%;
+  border: 1px solid #DC0000;
+  box-shadow: none;
+}
+
+.icon_red
+{
+  color: #DC0000;
+}
+
+.form-check-input:checked {
+  background-color: #DC0000;
+  border-color: #DC0000;
+}
