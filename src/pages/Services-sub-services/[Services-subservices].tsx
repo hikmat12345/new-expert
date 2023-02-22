@@ -6,7 +6,7 @@ import styled from "styled-components"
 import JsonData from "../Industries/Catagoriesdata/Catagoriesdata.json";
 import Link from 'next/link'
 import Image from 'next/image'
-import LoaderImage from "../../Assets/Images/loadingimage.jpg"
+import Imageforlisting from "../../Assets/Images/loadingimage.jpg"
 
 function Industrieslisting() {
   const Main=styled.main``
@@ -28,24 +28,32 @@ function Industrieslisting() {
       <Header />
       <div className='col-md-12 pt-3 padding_left_right_listing'>
         <div className='col-md-12 text-center'>
-          <h5><b>Mens Tailoring</b></h5>
+          <h5><b>Manicure Pedicure</b></h5>
         </div>
         {
-            JsonData.ListingInd.map((item, index)=>{
+            JsonData.ListingNails.map((item, index)=>{
               return(
-                <Link className='simple_decoration_link' href={`/industries-booking/${item.id}`}>  <div className='col-md-12 mt-3 background_card_white p-2'>
-         
-                <div className='row '>
+                <div className='mt-3'>
+                <Link className='simple_decoration_link' href={`/industries-booking/${item.id}`}>  
+                <div className='badge bg-danger margin_botton_badge'>{item.discount}%</div>
+                <div className='col-md-12 background_card_white p-2'>
+              <div className='row '>
                 <div className='col-md-3 '>
-                  <Image width={1000} height={1000} alt="image crashed" className='img-fluid width_img_loading' src={LoaderImage} />
+                  <Image className='img-fluid width_img_loading' src={Imageforlisting} width={1000} height={1000} alt="image crashed" />
                 </div>
-                <div className='col-md-6 m-auto'><p> {item.title}</p></div>
+                <div className='col-md-6 m-auto'>
+                    <p className='mb-1 test_head_services'> {item.title}</p>
+                    <p className='test_sub_heading'> {item.subtitle}</p>
+                    </div>
                 <div className='col-md-3 m-auto'>
-                  <h6><b>{item.price}</b></h6>
+                  <h6><b><span className='textline'>{item.price}</span>&nbsp;&nbsp; {item.price}</b></h6>
                 </div>
               </div>
-              </div>
-            </Link>
+              
+           
+        </div>
+        </Link>
+        </div>
              ) })
          
         }

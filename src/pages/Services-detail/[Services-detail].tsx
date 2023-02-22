@@ -1,33 +1,17 @@
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
-import React, {useEffect} from 'react'
-import Header from "../Industries/Header/Header"
-import styled from "styled-components"
 import Link from 'next/link'
+import React from 'react'
 import JsonData from "../Industries/Catagoriesdata/Catagoriesdata.json"
-import Imagedetail from '../../Assets/Images/man.webp'
+import Header from '../Industries/Header/Header'
+import styled from "styled-components"
 import Image from 'next/image'
+import Imagefromservices from"../../Assets/Images/foot.webp"
 
- 
- 
-const inter = Inter({ subsets: ['latin'] })
-
-
-
+function Servicesdetail() {
+    const Main=styled.main``
+    console.log("Json",JsonData.Hello)
 
 
-export default function Details() {
-
-
-  console.log(JsonData.Details)
-  const Main=styled.main``
-  const margin_cards = {
-    marginTop:"30px",
-    cursor:"pointer"
- }
-
-
-  
   return (
     <>
       <Head>
@@ -50,13 +34,13 @@ export default function Details() {
             
             <div className="row ">
                 <div className='col-md-6'>
-                    <Image width={1000} height={1000} alt="image crashed" className='img-fluid' src={Imagedetail} />
+                    <Image className='img-fluid' src={Imagefromservices} width={1000} height={1000} alt="image crashed" />
                 </div>
                 <div className='col-md-6 m-auto px-5'>
-                    <h3>{JsonData.Details.title}</h3>
-                    <p><span className='span_1'>From</span>&nbsp;&nbsp;&nbsp; <span className='span_2'> Rs.{JsonData.Details.price} </span></p>
-                    <p className='text_des_details'>{JsonData.Details.description}</p>
-                    <Link className='simple_decoration_link' href={`/Industries-listing/1`}> <button className='btn btn-danger btn-sm btn_style_red'> Book Now </button> </Link>
+                    <h3>Manicure Pedicure</h3>
+                    <p><span className='span_1'>From</span>&nbsp;&nbsp;&nbsp; <span className='span_2'> Rs.35 </span></p><br/>
+                    {/* <p className='text_des_details'>{JsonData.Details.description}</p> */}
+                    <Link className='simple_decoration_link' href={`/Services-sub-services/1`}> <button className='btn btn-danger btn-sm btn_style_red'> Service not Available </button> </Link>
                 </div>
             </div>
         </div>
@@ -65,3 +49,5 @@ export default function Details() {
     </>
   )
 }
+
+export default Servicesdetail

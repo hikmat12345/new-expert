@@ -1,83 +1,84 @@
 {
+  
     "Team": [
       
       {
         "id":"1",
         "title": "Tailoring",
         "path":"/",
-        "image": "../images/1.webp"
+        "image": "/images/1.webp"
     },
     {
         "id":"2",
         "title": "Cleaning",
         "path":"/",
-        "image": "../images/2.webp"
+        "image": "/images/2.webp"
     },
     {
         "id":"3",
         "title": "Electrical",
         "path":"/",
-        "image": "../images/00.webp"
+        "image": "/images/00.webp"
     },
     {
         "id":"4",
         "title": "Plumbing",
         "path":"/",
-        "image": "../images/3.webp"
+        "image": "/images/3.webp"
     },
     {
         "id":"5",
         "title": "Builder",
         "path":"/",
-        "image": "../images/4.webp"
+        "image": "/images/4.webp"
     },
     {
         "id":"6",
         "title": "Tradesmen",
         "path":"/",
-        "image": "../images/5.webp"
+        "image": "/images/5.webp"
     },
     {
         "id":"7",
         "title": "Security",
         "path":"/",
-        "image": "../images/6.webp"
+        "image": "/images/6.webp"
     },
     {
         "id":"8",
         "title": "Marketing",
         "path":"/",
-        "image": "../images/111.webp"
+        "image": "/images/111.webp"
     },
     {
         "id":"9",
         "title": "Photography",
         "path":"/",
-        "image": "../images/112.webp"
+        "image": "/images/112.webp"
     },
     {
         "id":"10",
         "title": "IT",
         "path":"/",
-        "image": "../images/8.webp"
+        "image": "/images/8.webp"
     },
     {
         "id":"11",
         "title": "Rentals",
         "path":"/",
-        "image": "../images/9.webp"
+        "image": "/images/9.webp"
     },
     {
         "id":"12",
         "title": "Beauty",
         "path":"/",
-        "image": "../images/10.webp"
+        "image": "/images/10.webp"
     },
     {
         "id":"13",
         "title": "Name",
         "path":"/",
-        "image": "../images/11.webp"
+        "image": "/images/11.webp"
     }
       
     ],
@@ -86,22 +87,22 @@
         {
             "id":"1",
             "title":"Mens Tailoring",
-            "image":"../images/man.webp"
+            "image":"/images/man.webp"
         },
         {
             "id":"2",
             "title":"Woman Tailoring",
-            "image":"../images/woman.webp"
+            "image":"/images/woman.webp"
         }, 
         {
             "id":"3",
             "title":"Mens Tailoring",
-            "image":"../images/man.webp"
+            "image":"/images/man.webp"
         },
         {
             "id":"4",
             "title":"Woman Tailoring",
-            "image":"../images/woman.webp"
+            "image":"/images/woman.webp"
         }
     ],
     "Details":
@@ -132,5 +133,50 @@
             "title":"Khaddar/Karandi with Double Stitching",
             "price":"2300"
         }
+    ], "ListingNails" :
+    [
+        {
+            "id":"1",
+            "title":"Mani With Classic Polish",
+            "subtitle":"File, buff, cuticle work followed by polish.",
+            "price":"1900",
+            "discount":"20"
+        },
+        {
+            "id":"1",
+            "title":"Mani With Classic Polish",
+            "subtitle":"File, buff, cuticle work followed by polish.",
+            "price":"1900",
+            "discount":"20"
+        }
+    ],
+    "Nails":[
+        {
+            "id":"1",
+            "title":"Manicure Pedicure",
+            "price": "1900",
+            "image":"/images/foot.webp"
+
+        }
+    ],"Hello":[
+        {
+            "id":"1",
+            "title":"Manicure Pedicure",
+            "price": "1900",
+            "image":"../images/foot.webp"
+
+        }
+    ],
+    "Detailofnails":
+    [
+        {
+            "id":"1",
+            "title":"Manicure Pedicure",
+            "price": "1900",
+            "image":"../images/foot.webp"
+
+        }
     ]
+   
+
   }

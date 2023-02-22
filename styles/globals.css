@@ -129,7 +129,7 @@ body {
 
   .width_img_loading
   {
-    width: 80%;
+    width: 80% !important;
     border-radius: 10px;
   }
 
@@ -326,4 +326,39 @@ body {
 .form-check-input:checked {
   background-color: #DC0000;
   border-color: #DC0000;
+}
+
+.test_head_services
+{
+  font-size: 95%;
+}
+
+.test_sub_heading
+{
+  font-size: 90%;
+  color: gray;
+}
+
+.textline
+{
+  text-decoration: line-through;
+  color: rgb(172, 172, 172);
+  font-weight: 400;
+}
+
+.margin_botton_badge
+{
+  position: absolute;
+  background-color: #FF0000 !important;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+
+@media only screen and (max-width: 760px) {
+  .width_img_loading
+  {
+    width: 100% !important;
+    border-radius: 10px;
+  }
 }
