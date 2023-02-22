@@ -7,9 +7,10 @@ export const Layout = (
 )=>{
    return (
        <div>
-           <GlobalStyles />
+            <GlobalStyles />
             <Header />
-             {children}
+            {children}
+            
        </div>
     ); 
 }
