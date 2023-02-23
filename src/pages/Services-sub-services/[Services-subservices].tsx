@@ -41,11 +41,11 @@ function Industrieslisting() {
                 <div className='col-md-3 '>
                   <Image className='img-fluid width_img_loading' src={Imageforlisting} width={1000} height={1000} alt="image crashed" />
                 </div>
-                <div className='col-md-6 m-auto'>
+                <div className='col-md-6 m-auto pt-3'>
                     <p className='mb-1 test_head_services'> {item.title}</p>
                     <p className='test_sub_heading'> {item.subtitle}</p>
                     </div>
-                <div className='col-md-3 m-auto'>
+                <div className='col-md-3 m-auto pt-3 text-end px-5'>
                   <h6><b><span className='textline'>{item.price}</span>&nbsp;&nbsp; {item.price}</b></h6>
                 </div>
               </div>
