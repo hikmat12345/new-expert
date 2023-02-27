@@ -1,9 +1,10 @@
 {
+    "presets": ["next/babel"],
      "plugins": [
       [
-        "babel-plugin-styled-components",
+        "styled-components",
         {
-          "ssr": false
+          "ssr": true
         }
       ]
     ]

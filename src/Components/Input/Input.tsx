@@ -1,18 +1,17 @@
 // components/Layout.js
-import Header from '../Header/Header';
-import {InputTag} from '../../styles//Input.style';
-import React, { useState, useEffect } from "react";
+ import {InputTag} from '../../styles//Input.style';
+import React, { useState } from "react"; 
+ import { InputProps } from '@/@types/Input';
+ import { Label } from '@/styles/Label.styled';
 
-import {styled, TextField} from "@mui/material";
-import { InputProps } from '@/@types/Input';
-
-export const InputField = ({  
-    primary,
+export const InputField = ({ 
+    label ="",
+    primary=false,
     type,
-    placeholder,
+    placeholder="text",
     value = "",
-    getValue  ,
-    error ,
+    getValue=()=>{},
+    error=()=>{} ,
     errorMessage,
     isRequired = false,
     ...rest
@@ -26,33 +25,36 @@ export const InputField = ({
     getValue(e.target.value);
   };
 
-  const InputField= styled(TextField)((theme)=>({
  
-  })) 
-  
+    
    return (
     <>
     {primary ? (
-          <InputField
-              error={error(initialValue)}
-              helperText={error(initialValue) && errorMessage}
+        <div style={{ display: "block", margin: "auto",  width: "37%"}}>
+          <Label>{label}</Label> 
+          <InputTag
+            //   error={error(initialValue)}
+            //   helperText={error(initialValue) && errorMessage}
               value={initialValue}
               onChange={handleChange}
               placeholder={placeholder}
               type={type}
                {...rest}
             /> 
+            </div>
        ) : (
-           <InputField
-            error={error(initialValue)}
-            helperText={error(initialValue) && errorMessage}
+        <div style={{display: "block", margin: "auto",  width: "37%"}}> 
+          <Label>{label}</Label> 
+           <InputTag
+            // error={error(initialValue)}
+            // helperText={error(initialValue) && errorMessage}
             value={initialValue}
             onChange={handleChange}
             placeholder={placeholder}
             type={type}
-            variant="outlined"
-             {...rest}
+              {...rest}
           />
+        </div>
       ) 
      }
     </>

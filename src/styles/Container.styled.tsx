@@ -10,5 +10,6 @@ export const Container = styled.div`
 `
 export const LoginContainer = styled.div`
  padding: 20px 70px;
+ height:100vh;
  background-color: #f1f6fa; 
 `
