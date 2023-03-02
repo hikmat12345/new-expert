@@ -1,11 +1,11 @@
 import styled from "styled-components"
-export const Message=styled.div<{color?:string}>`
+export const Message=styled.div<{type?:boolean}>`
  font-size: 14px;
  font-weight:500;
  font-stretch: normal;
  font-style: normal;
  letter-spacing: normal; 
- color: ${({color})=>color=="green"?"green":"red"}; 
+ color: ${({type})=>type==true?"green":"red"}; 
  padding: 8px;
  text-align: center; 
  padding:8px;

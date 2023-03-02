@@ -18,26 +18,28 @@ function Signin() {
 
   
   const router = useRouter()
-  const [phoneNumber, setPhoneNumber]= React.useState("") 
+  const [phoneNumber, setPhoneNumber]= React.useState(0) 
   const [error, setError] = React.useState("");
   const [errorMessage, setErrorMessage]= React.useState("") 
-  console.log(phoneNumber, 'phoneNumber')
-  const handleSubmit = async (event:any) => {
+   const handleSubmit = (event:any) => {
     event.preventDefault();
     try {
-      const success = await LoadAction({number:phoneNumber, });
-      if (success) {
-        router.push('/password');
-      } else {
-        setErrorMessage('Invalid credentials');
-        router.push('/password');
-      }
-    } catch (error) {
-      console.error(error);
-      setErrorMessage('An error occurred');
-    }
-  };
-
+       LoadAction(phoneNumber).then(async(result:any)=>{
+         if (result?.code===0 && result?.error===false) {
+            router.push({pathname:'/mobile-verification', query:{...result?.result[0]}});
+          } else if (result?.code===1 &&  result?.error===false) {
+            router.push({pathname:'/password',  query:{...result?.result[0], mobileNumber:phoneNumber}});
+          } else {
+            console.log(result, 'result')
+            setErrorMessage('Invalid credentials');
+          }
+    
+  })
+  } catch (error) {
+    console.error(error);
+    setErrorMessage('An error occurred');
+  }
+  }
   
   return (
     <LoginContainer>
@@ -107,8 +109,7 @@ function Signin() {
              <Button type="submit" width='340px'> 
                 Next
              </Button> 
-              <Card title="itle" price={23} />
-             <Message> {errorMessage} </Message>
+              <Message> {errorMessage} </Message>
           </div>
         </form>
            <CopyRight>

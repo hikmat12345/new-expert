@@ -1,45 +1,65 @@
-import Img from '@/Components/Image/Image';
- import PhoneInputField from '@/Components/CountryPhoneInput/CountryPhoneInput';
+import Img from '@/Components/Image/Image'; 
 import { LoginContainer } from '@/styles/Container.styled';
-import { Flex } from '@/styles/Flex.styled';
-  import  React, {useState} from 'react'; 
+import { Flex } from '@/styles/Flex.styled'; 
+import  React, {useState} from 'react'; 
 import styled from 'styled-components'
-import { Button } from '@/styles/Button.style';
-import { CopyRight } from '@/styles/CopyRight.styled';
 import { useRouter } from 'next/router';
+import { CopyRight } from '@/styles/CopyRight.styled';
+import { Button } from '@/styles/Button.style';
 import { FAECodeInput } from '@/Components/VerificationInput/VerificationInput';
-const Item=  styled.div<{width:string, isOnMobile?:any}>`
+import { EmailVerificationAction, ResendAction, VerificationAction } from '@/helper';
+import { Message } from '@/styles/message.style';
+const Item=  styled.div`
   width:${({width}:{width:string})=>width ||"100%"}; 
-  @media(max-width:768px){
-      }
   ` 
 function EmailVerificationCode() {
-  const router = useRouter()
-   const handleClick = () => {
-     router.push("/")
+  const router = useRouter();
+  const [errorMessage, setErrorMessage]= React.useState({type:false, message:""}) 
+  const [otp, setOTP]= useState("")
+  const query= router.query
+  const {  id,  email, }=query||{}
+  const handleClick = (e:any) => {
+      e.preventDefault()
+      EmailVerificationAction(id , otp ,  1 ).then((result)=>{
+        if (result?.code===0 && result?.error===false) {
+          router.push({pathname:'/', query:{id}});
+          // go to home page 
+        } else {
+          setErrorMessage({type:false, message:result?.message});
+        } 
+    })
   }
-    return (
-      <LoginContainer>
-        <Flex style={{
-          backgroundColor:"#fff"
-        }}>
-        <Item width={"35%"} >
-            <Img
-            inlineCss={{
-                height: "38rem",
-                width: "100%",
-              }}
-              src={`/assets/images/LoginBg.png`} />
-            <Img
-            inlineCss={{ 
-              position: "absolute",
-              width: "17rem",
-              top: "18rem",
-              bottom: "0",
+
+const resendHandler = () => {
+  ResendAction(id, IsEmailOTP=true).then((result)=>{
+   console.log(result, 'resultresult')
+   setErrorMessage({type:true, message:result?.message=="Successfully"?"Code Sent! Please check your gmail account.": result?.message});
+   })
+}
+
+  return (
+    <LoginContainer>
+      <Flex style={{
+        backgroundColor:"#fff"
+      }}>
+       <Item width={"35%"} >
+          <Img
+           inlineCss={{
+              height: "38rem",
+              width: "100%",
             }}
-            src={`/assets/images/logoOnbanner.png`} />
-        </Item>
-        <Item width={"65%"} >
+            src={`/assets/images/LoginBg.png`} />
+          <Img
+           inlineCss={{ 
+            position: "absolute",
+            width: "15rem",
+            top: "21rem",
+            bottom: "0",    
+          }}
+          src={`/assets/images/logoOnbanner.png`} />
+       </Item>
+       <Item width={"65%"} >
+        <form onSubmit={handleClick}>
           <div style={{ 
           }}>
             <h3 style={{
@@ -54,7 +74,7 @@ function EmailVerificationCode() {
             textAlign:"center",
             color:"#22272e",
           }}>
-            Mobile <span style={{color:"#dc0000"}} >Verification</span>
+            Email <span style={{color:"#dc0000"}} >Verification</span>
             </h3>
             <p style={{
                 margin: "0.6px 33px 40px 0.9px",
@@ -75,15 +95,15 @@ function EmailVerificationCode() {
               textAlign: "center",
               color: "#444",
             }}>
-              +44 789 392 0403
+              { email || "email id is missed"}
             </p>
-              <FAECodeInput /> 
-            <p style={{ 
-              fontSize: "14px", 
-              textAlign: "center",
-              color: "#a9a9a9",}}>
-              Having problem?
-            </p>
+              <FAECodeInput  getValue={setOTP}/> 
+              <p style={{ 
+                fontSize: "14px", 
+                textAlign: "center",
+                color: "#a9a9a9",}}>
+                Having problem?
+              </p>
             <button style={{  
               margin:"auto",
               display:"block",
@@ -93,21 +113,23 @@ function EmailVerificationCode() {
               fontSize: "14px",
               fontWeight: "600",
               textAlign: "center",
-              color: "#db0406"}}>
-                 Resend Code
+              cursor:"pointer",
+              color: "#db0406"}} onClick={resendHandler}>
+              Resend Code
             </button> 
-            <Button onClick ={handleClick} width='340px'> Verify Number </Button> 
+            <Button type='submit' width='340px'> Verify Number </Button> 
+            <Message type={errorMessage.type}> {errorMessage.message} </Message>
           </div>
-            
-            {/* <InputField /> */}
-            <CopyRight>
-            Terms & Conditions • Privacy Policy • Copyright • Cookies Policy • Help
-    © 2022 Selteq Ltd.
-            </CopyRight>
-        </Item>
-        </Flex>
-      </LoginContainer>
-    )
+        </form>
+          {/* <InputField /> */}
+          <CopyRight>
+           Terms & Conditions • Privacy Policy • Copyright • Cookies Policy • Help
+© 2022 Selteq Ltd.
+           </CopyRight>
+       </Item>
+      </Flex>
+    </LoginContainer>
+  )
 }
 
 export default EmailVerificationCode

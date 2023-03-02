@@ -9,12 +9,29 @@ import { useRouter } from 'next/router';
 import ImageUploadCard from '@/Components/UploadAvatar/UploadAvatar';
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Checkbox } from '@mui/material';
 import Link from 'next/link';
+import { PersonalVerifcationAction } from '@/helper';
+import { Message } from '@/styles/message.style';
  
 function PersonalInformation() {
-  const router = useRouter()
+  const [errorMessage, setErrorMessage]= React.useState({type:false, message:""}) 
 
-  const handleClick = () => {
-     router.push("/email-verification")
+  const router = useRouter()
+ const {id, }=router.query ||{}
+ const firstName="";
+ const  lastName="";
+ const genderId = 1;
+ const imagePath= "";
+ const modifiedBy=0;
+ console.log(id, 'id')
+  const handleClick = (e:any) => {
+    e.preventDefault()
+    PersonalVerifcationAction({userId:Number(id), firstName, lastName, genderId, imagePath, modifiedBy }).then((result)=>{
+      if (result?.code===0 && result?.error===false) {
+        router.push({pathname:'/add-email', query:{id}});
+      } else {
+        setErrorMessage({type:false, message:result?.message});
+      } 
+  }) 
   }
   return (
     <LoginContainer>
@@ -57,11 +74,9 @@ function PersonalInformation() {
               <FormControlLabel value="male" control={<Radio />} label="Male" /> 
             </RadioGroup>
           </FormControl> 
-          <Flex style={{
+            <Flex style={{
                 backgroundColor:"#fff",
-                width: "340px",
-                
-                
+                width: "340px", 
               }}>
                 <Item> 
                 <FormControlLabel control={<Checkbox defaultChecked onChange={()=>{}} color="default" />}
@@ -74,6 +89,7 @@ function PersonalInformation() {
                   </Item>
             </Flex>
           <Button onClick ={handleClick} width='340px'> Confirm </Button> 
+          <Message type={errorMessage.type}> {errorMessage.message} </Message>
         </div>
            
           {/* <InputField /> */}
