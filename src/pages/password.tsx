@@ -1,7 +1,6 @@
 import Img from '@/Components/Image/Image'; 
-// import { InputField } from '@/Components/Input/Input';
- import InputField from '@/Components/InputField';
-import { SignIn } from '@/helper';
+import { InputField } from '@/Components/Input/Input';
+import PaswordField from '@/Components/InputField';
 import { Button } from '@/styles/Button.style';
 import { LoginContainer } from '@/styles/Container.styled';
 import { Flex, Item } from '@/styles/Flex.styled'; 
@@ -14,23 +13,11 @@ import styled from 'styled-components'
  
 function Password() {
     
-  const [errorMessage, setErrorMessage]= React.useState({type:false, message:""}) 
-  const [confirmMessage, setConfirmMessage]= React.useState("") 
   const router = useRouter()
-  const query= router.query || {}
-  const [passwordValue, setPassword]= React.useState("")
- 
-   const handleClick = (e:any) => {
-    e.preventDefault()
-     SignIn(query?.mobileNumber,  passwordValue ).then((result)=>{
-       if (result?.code===0 && result?.error===false) {
-         router.push({pathname:'/', query:{...query}});
-       } else {
-         setErrorMessage({type:false, message:result?.message});
-      } 
-   })
+
+  const handleClick = () => {
+     router.push("/mobile-verification")
   }
-  
   return (
     <LoginContainer>
       <Flex style={{
@@ -81,8 +68,8 @@ function Password() {
               textAlign: "center",
               color: "#757677",
           }}>Is already registered.</p>
-           <InputField type="password" onChange={(e:any)=>setPassword(e.target.value)}  isPasswordField={true} indicateIcon="/assets/icons/lock.svg"  placeholder="Enter Password" passwordLabel='Enter Password to Login'   />
-           <Flex style={{
+          <PaswordField indicateIcon="/assets/icons/lock.svg" placeholder="Enter Password" passwordLabel='Enter Password to Login' />
+            <Flex style={{
                 backgroundColor:"#fff",
                 width: "340px",
               }}>

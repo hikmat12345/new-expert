@@ -1,0 +1,408 @@
+.text_color
+{
+    color: gray;
+    font-size: 90%;
+}
+
+.borders_div
+{
+    border: 1px solid lightgray;
+    margin-top: 1%;
+    border-radius: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 20px;
+}
+
+.img_width
+{
+    width: 11% ;
+}
+
+.flex_image
+{
+    display: flex;
+    flex-direction: row;
+}
+.sunspots
+{
+    font-size: 80%;
+}
+.sunspots1
+{
+    font-size: 80%;
+    margin-bottom: 0px !important;
+}
+
+.sunspots2
+{
+    font-size: 75%;
+    font-weight: 100;
+    margin-bottom: 0px;
+}
+
+.margin_autoo
+{
+    padding-top: 2.5%;
+}
+
+.app_text
+{
+    font-size: 85%;
+    font-weight: bold;
+    margin-bottom: 0%;
+}
+
+.app_text_paragrapg
+{
+    font-size: 75%;
+    margin-bottom: 0px;
+}
+.icon_right
+{
+    font-size: 60%;
+    padding-bottom: 20%;
+}
+
+.background_color_red
+{
+    background-color: rgb(220, 0, 0);
+    border: none;
+    color: white;
+    font-size: 80%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    padding-top: 0.4%;
+    padding-bottom: 0.4%;
+}
+
+.background_color_red1
+{
+    background-color: rgb(251, 228, 228);
+    border: none;
+    color: rgb(220, 0, 0) !important;
+    font-size: 80%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    padding-top: 0.4%;
+    padding-bottom: 0.4%;
+}
+
+.main_flex
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.button_counter
+{
+    font-size: 60%;
+    background-color: rgb(220, 0, 0);
+    color: white !important;
+    border: none;
+    padding-top: 0.3%;
+    padding-left: 1.5%;
+    padding-right: 1%;
+    border-radius: 5px;
+}
+
+.counter_value
+{
+    font-size: 70%;
+    margin: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1%;
+    font-weight: 600;
+    color: black;
+}
+
+.clock_icon
+{
+    width: 10%;
+}
+
+.right_icon
+{
+    width: 1%;
+}
+
+.app_text_paragrapg11
+{
+    font-size: 70%;
+    color: lightgray;
+    padding-top: 0.5%;
+    margin-bottom: 0px;
+}
+
+.yes_radio
+{
+    font-size: 80%;
+    color: gray;
+}
+
+.padding_left_new
+{
+    padding-left: 2% !important;
+    margin-bottom: -12px;
+    position: relative;
+    z-index: 1000;
+    
+}
+
+.text_decoration_overline
+{
+    text-decoration: line-through;
+    font-weight: 200;
+}
+
+.text_new_price
+{
+    font-size: 120%;
+}
+
+.display_flexx
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.button_disabled
+{
+    background-color: rgb(235, 235, 235);
+    border: none;
+    border-radius: 5px;
+    font-size: 70%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    font-weight: 700;
+    color: rgb(165, 164, 164);
+    margin-left: 1.5%;
+    transition: 0.9s;
+    width: 100%;
+}
+
+.button_disabled:hover
+{
+    box-shadow: 1px 1px 3px 3px rgba(234, 233, 233, 0.265);
+    background-color: rgb(235, 235, 235);
+    border: none;
+    border-radius: 5px;
+    font-size: 70%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    font-weight: 700;
+    color: rgb(165, 164, 164);
+    margin-left: 1.5%;
+}
+
+.button_background_selected
+{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 70%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    font-weight: 700;
+    color: rgb(165, 164, 164);
+    box-shadow: 1px 1px 2px 2px rgba(234, 233, 233, 0.499);
+    width: 100%;
+}
+
+.img_fluid_cross
+{
+    width: 9%;
+    margin-top: -12px;
+    margin-right: 2%;
+    position: relative;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.text_right_div
+{
+    text-align: right;
+    height: 0px;
+}
+
+.loading
+{
+    height: 100vh;
+    position: relative;
+}
+
+.loading2
+{
+    margin: auto;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  justify-content: center;
+  text-align: center;
+}
+
+.loader_width
+{
+    width: 20%;
+}
+
+.video_icon
+{
+    width: 10%;
+    
+}
+
+
+/* for start calender ------------------------------------------------------------------------ */
+
+  .responsive_calendar 
+  {
+    font-size: 9px !important;
+    width: 100% !important;
+  }
+
+  .button_background_light
+  {
+    background-color: white;
+    border: 1px solid lightgray;
+    font-size: 80%;
+    padding: 2%;
+    border-radius: 10px;
+    color: gray;
+  }
+  
+  @media (max-width: 1500px) {
+    .responsive_calendar {
+      font-size: 8px !important;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .responsive_calendar {
+      font-size: 7px !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .responsive_calendar {
+      font-size: 6px !important;
+    }
+  }
+  
+  /* Large screens */
+  @media (min-width: 2500px) {
+    .responsive_calendar {
+      font-size: 12px !important;
+    }
+  }
+
+ /* for end calender ends --------------------------------------------------------------------------------------- */
+
+
+
+@media only screen and (max-width: 600px) {
+    .loading2
+    {
+        margin: auto;
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    justify-content: center;
+    text-align: center;
+    }
+    .flex_image
+    {
+        display: flex;
+        flex-direction: row;
+    }
+    .img_width
+    {
+        width: 30% ;
+    }
+    .button_disabled
+    {
+        background-color: rgb(235, 235, 235);
+        border: none;
+        border-radius: 5px;
+        font-size: 70%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+        font-weight: 700;
+        color: rgb(165, 164, 164);
+        margin-left: 1.5%;
+        transition: 0.9s;
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    .button_disabled:hover
+    {
+        box-shadow: 1px 1px 3px 3px rgba(234, 233, 233, 0.265);
+        background-color: rgb(235, 235, 235);
+        border: none;
+        border-radius: 5px;
+        font-size: 70%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+        font-weight: 700;
+        color: rgb(165, 164, 164);
+        margin-left: 1.5%;
+        margin-top: 10%;
+    }
+
+    .button_background_selected
+    {
+        background-color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 70%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+        font-weight: 700;
+        color: rgb(165, 164, 164);
+        box-shadow: 1px 1px 2px 2px rgba(234, 233, 233, 0.499);
+        width: 100%;
+        margin-top: 10%; 
+    }
+    .img_fluid_cross
+    {
+        width: 9%;
+        margin-top: 20px !important;
+        margin-right: 2%;
+        position: relative;
+        z-index: 1000;
+        cursor: pointer;
+    }
+    .padding_left_new
+    {
+        padding-left: 5% !important;
+        margin-bottom: -12px;
+        position: relative;
+        z-index: 1000;
+        
+    }
+    .margin_top_calender_dates
+    {
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+  }

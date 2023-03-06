@@ -11,6 +11,7 @@ const Input = (props: any, {onChangeInput=()=>{}}:{onChangeInput:any}) => {
         <div style={{margin:"auto"}}>
           <PhoneInput
             style={{
+                margin:"auto !important",
                 width: "340px",
                 position: "relative",
                 fontSize: "14px",
@@ -20,8 +21,7 @@ const Input = (props: any, {onChangeInput=()=>{}}:{onChangeInput:any}) => {
                 marginBottom: "0 !important",
                 border: "initial",
                 paddingLeft: "48px",
-                marginRight:"auto",
-                marginLeft: "auto",
+                marginLeft: "0",
                 lineHeight: "25px",
                 height: "54px",
                 padding: "10.9px 123px 13px 15px",

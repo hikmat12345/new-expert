@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_11287" data-name="Rectangle 11287" width="20" height="20" transform="translate(20 883)" fill="#dc0000"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_697" data-name="Mask Group 697" transform="translate(-20 -883)" clip-path="url(#clip-path)">
+    <g id="vidicon-line_3_" data-name="vidicon-line (3)" transform="translate(20 883)">
+      <path id="Path_39618" data-name="Path 39618" d="M0,0H20V20H0Z" fill="none"/>
+      <path id="Path_39619" data-name="Path 39619" d="M14.167,7.667l4.344-3.042a.417.417,0,0,1,.656.342V15.033a.417.417,0,0,1-.656.342l-4.344-3.042v3.5a.833.833,0,0,1-.833.833H1.667a.833.833,0,0,1-.833-.833V4.167a.833.833,0,0,1,.833-.833H13.333a.833.833,0,0,1,.833.833Zm0,2.632L17.5,12.632V7.367L14.167,9.7v.6ZM2.5,5V15h10V5ZM4.167,6.667H5.833V8.333H4.167Z" fill="#dc0000"/>
+    </g>
+  </g>
+</svg>

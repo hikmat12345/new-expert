@@ -19,7 +19,10 @@ export default function Home() {
       </Head>
       <Main>
         <Container>
-          <View>Home page</View> 
+          <div className='row '>
+            <div className='col-md-6 bg-dark'>1</div>
+            <div className='col-md-6 bg-success'>1</div>
+          </div>
           </Container>
        </Main>
     </>

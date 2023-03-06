@@ -3,6 +3,11 @@ import { Layout } from '@/Components/Layout/Layout'
 import { theme } from '@/utils/utils'
 import   { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'font-awesome/css/font-awesome.min.css'
+
+
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Layout> 

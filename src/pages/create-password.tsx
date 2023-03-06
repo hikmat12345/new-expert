@@ -1,37 +1,22 @@
 import Img from '@/Components/Image/Image'; 
 import InputField from '@/Components/InputField';
-import { PasswordAction } from '@/helper';
   import { Button } from '@/styles/Button.style';
 import { LoginContainer } from '@/styles/Container.styled';
 import { CopyRight } from '@/styles/CopyRight.styled';
 import { Flex } from '@/styles/Flex.styled'; 
-import { Message } from '@/styles/message.style';
 import { useRouter } from 'next/router';
-import React, {useState} from 'react'; 
+import * as React from 'react'; 
 import styled from 'styled-components'
 const Item=  styled.div`
   width:${({width}:{width:string})=>width ||"100%"}; 
   `
  
 function CreatePassword() {
-  const [errorMessage, setErrorMessage]= React.useState({type:false, message:""}) 
-  const [confirmMessage, setConfirmMessage]= React.useState("") 
+    
   const router = useRouter()
-  const query= router.query || {}
-  const [passwordValue, setPassword]= useState("")
-  const [confirmPassword, setConfirm]= useState()
 
-   const handleClick = (e:any) => {
-    e.preventDefault()
-    confirmPassword === passwordValue?
-    PasswordAction(query.id,  passwordValue ).then((result)=>{
-       if (result?.code===0 && result?.error===false) {
-         router.push({pathname:'/personal-information', query:{...query}});
-       } else {
-         setErrorMessage({type:false, message:result?.message});
-      } 
-   })
-   : setConfirmMessage("Please add you password")
+  const handleClick = () => {
+     router.push("/personal-information")
   }
   return (
     <LoginContainer>
@@ -71,14 +56,11 @@ function CreatePassword() {
         }}>
           Create <span style={{color:"#dc0000"}} >Password</span>
           </h3>
-           <form onSubmit={handleClick}>
-            <br/>
-            <InputField type="password" onChange={(e:any)=>setPassword(e.target.value)}  isPasswordField={true} indicateIcon="/assets/icons/lock.svg"  placeholder="Password" passwordLabel='Enter Password'   />
-            <br/>
-            <InputField type="password" onChange={(e:any)=>{setConfirm(e.target.value); confirmPassword !==passwordValue && setConfirmMessage("Your password is not matching!"); }} isPasswordField={true} indicateIcon="/assets/icons/lock.svg" message={confirmPassword !==passwordValue ? confirmMessage : ""} placeholder="Confirm Password" passwordLabel='Repeat Password' />
-            <Button type="submit" width='340px'> Save & Continue </Button>
-            <Message type={errorMessage.type}> {errorMessage.message} </Message>
-          </form>
+          <br/>
+          <InputField type="password" isPasswordField={true} indicateIcon="/assets/icons/lock.svg" placeholder="Password" passwordLabel='Enter Password' />
+          <br/>
+          <InputField type="password" isPasswordField={true} indicateIcon="/assets/icons/lock.svg" placeholder="Confirm Password" passwordLabel='Repeat Password' />
+          <Button onClick ={handleClick} width='340px'> Save & Continue </Button>
         </div>
            
           {/* <InputField /> */}

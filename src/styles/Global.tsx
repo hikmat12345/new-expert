@@ -54,6 +54,19 @@ const GlobalStyles = createGlobalStyle`
     background: #f1f6fa;
     border-radius: 3px 0 0 0;
 }
+.Calendar__day.-selected
+{
+  border-radius: 5px !important
+}
+.Calendar__day.-selected:hover
+{
+  border-radius: 5px !important
+}
+.Calendar__day.-ltr
+{
+  min-height: 0em;
+}
+
 `
 
 export default GlobalStyles

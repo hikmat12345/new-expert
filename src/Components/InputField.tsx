@@ -2,7 +2,7 @@
 import { Label } from '@/styles/Label.styled'
 import { useRef, useState } from 'react' 
   
-export default function InputField({ onChange=()=>{}, passwordLabel="Please enter your password", placeholder="Please enter", indicateIcon="", isPasswordField=false, type="text", message=""}: {onChange?:any, passwordLabel?:string, placeholder:string, indicateIcon:string, isPasswordField?:boolean, type?:string, message?:string}) {
+export default function InputField({ setPasswordValue=()=>{}, passwordLabel="Please enter your password", placeholder="Please enter", indicateIcon="", isPasswordField=false, type="text"}: {setPasswordValue?:any, passwordLabel?:string, placeholder:string, indicateIcon:string, isPasswordField?:boolean, type?:string}) {
   const [passwordIcon, setPasswordIcon]=useState(false)
    const ref:any=useRef() 
    const passwordViewHandle=()=>{
@@ -30,15 +30,8 @@ export default function InputField({ onChange=()=>{}, passwordLabel="Please ente
                   width: "46px",
                   padding: "11px",
               }} /> }
-              <InputTag padding="6.9px 40px 6px 54.5px" ref={ref} placeholder={placeholder} type={type} onChange={onChange}   name ="login-password" className ="login-password" id="login-password" />
-                {message && <div style={{
-                  position: "absolute",
-                  width: "100%",
-                  color: "red",
-                  fontSize: "12px",
-                  paddingTop: "4px",
-              }}>{message}</div>}
-            {isPasswordField && <>
+            <InputTag padding="6.9px 40px 6px 54.5px" ref={ref} placeholder={placeholder} type={type} onChange={setPasswordValue}   name ="login-password" className ="login-password" id="login-password" />
+           {isPasswordField && <>
             {passwordIcon && <img src="/assets/icons/password-show.svg" onClick = { passwordViewHandle } style={{
                 position: "absolute",
                 right:"15px",
