@@ -66,7 +66,23 @@ const GlobalStyles = createGlobalStyle`
 {
   min-height: 0em;
 }
-
+input[type="file"] {
+  display: none;
+}
+.display_file_upload
+{
+  margin-top:10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  background: rgb(251, 228, 228); 
+  display: table;
+  border-radius: 5px;
+  color: red;
+  font-size: 80%;
+  
+}
 `
 
 export default GlobalStyles
