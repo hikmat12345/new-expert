@@ -34,6 +34,9 @@ function appointments() {
   const decrement = () => {
     setCounter(counter - 1);
   };
+
+
+  // material ui checkboxes 
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   const [selectedValue, setSelectedValue] = React.useState('a');
 
@@ -63,7 +66,8 @@ function appointments() {
     }).then((res: any) => res.json()).then((response: any) => {
       console.log("------------- note saved respnose ---------------");
       console.log(response);
-      toast(response.message);
+      // toast.success(response.message);
+      alert(response.message);
       setTimeout(() => {
         // router.push("/select-services")
       }, 4000);
@@ -159,7 +163,7 @@ function appointments() {
 
   return (
     <div className="col-md-12 ">
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <div className="container px-md-5 pt-2">
         <div className="col-md-12">
           <span className={styles.text_color}>
@@ -406,7 +410,7 @@ function appointments() {
                 </p>
             </div>
             <div className="col-md-12 pt-2">
-                <input className="form-control" placeholder="Type Answer Here..." type="text" onChange={e => setnote({...note, notes: e.target.value})} />
+                <input className="form-control" placeholder="Type Answer Here..." type="text" onChange={(e) => setnote({...note, notes: e.target.value})} />
             </div>
           </div>
           <div className="col-md-12 text-end px-3 pt-2">
