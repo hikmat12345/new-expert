@@ -29,5 +29,5 @@ export  type InputProps ={
    type?:string,
    fields?:number,
    inputStyle?:any,
-   getValue?:() => void, 
+   getValue?:(e:any) => any, 
   }
