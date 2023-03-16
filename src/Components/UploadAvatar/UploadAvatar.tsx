@@ -1,16 +1,11 @@
 // imports the React Javascript Library
-import React, {useRef, useState} from "react";
+import React, { useRef } from "react";
 //Card
-import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardContent from "@mui/material/CardContent";
-import Fab from "@mui/material/Fab";
-import Grid from "@mui/material/Grid";
-import Avatar from '@mui/material/Avatar'; 
-import { withStyles } from "@mui/material/styles";
-import styled from 'styled-components'
+import Avatar from "@mui/material/Avatar";
+import styled from "styled-components";
+import Image from "next/image";
 
-export default function ImageUploadCard(props?:any){
+export default function ImageUploadCard(props?: any) {
   //   const styles = (theme:any) => ({
   //     root: {
   //       backgroundColor: "white",
@@ -25,7 +20,7 @@ export default function ImageUploadCard(props?:any){
   //     iconHover: {
   //       margin: 4,
   //       "&:hover": {
-          
+
   //       }
   //     },
   //     cardHeader: {
@@ -80,23 +75,23 @@ export default function ImageUploadCard(props?:any){
   //     selectedFile: null
   //   };
   //   const [state, setState]= useState<any>(initState)
-    
+
   //   const handleUploadClick = (event:any) => {
   //     var file = event.target.files[0];
   //     const reader = new FileReader();
-  //     var url = reader.readAsDataURL(file); 
+  //     var url = reader.readAsDataURL(file);
   //     reader.onloadend = function() {
   //       setState({
   //         selectedFile: [reader.result]
   //       });
-  //     }; 
+  //     };
   //     setState({
   //       mainState: "uploaded",
   //       selectedFile: event.target.files[0],
   //       imageUploaded: 1
   //     });
   //   };
- 
+
   //   const renderInitialState=()=> {
   //       const { classes, } = props;
   //       return (
@@ -115,14 +110,14 @@ export default function ImageUploadCard(props?:any){
   //                 <Fab component="span" className={classes}>
   //                   <Avatar>H</Avatar>
   //                 </Fab>
-  //               </label> 
-                
+  //               </label>
+
   //             </Grid>
   //           </CardContent>
   //         </React.Fragment>
   //       );
   //    }
- 
+
   //   const handleAvatarClick =(value:any) =>{
   //     var filename = value.url.substring(value.url.lastIndexOf("/") + 1);
   //     console.log(filename);
@@ -155,7 +150,7 @@ export default function ImageUploadCard(props?:any){
   //           </React.Fragment>
   //         );
   //       }
-  
+
   // const { classes,   } = props;
   //  return (
   //     <React.Fragment>
@@ -167,10 +162,9 @@ export default function ImageUploadCard(props?:any){
   //         </Card>
   //       </div>
   //     </React.Fragment>
-  //  ); 
+  //  );
 
- 
-  const AvatarWrapper= styled.div`
+  const AvatarWrapper = styled.div`
     position: relative;
     height: 130px;
     width: 130px;
@@ -179,53 +173,66 @@ export default function ImageUploadCard(props?:any){
     overflow: hidden;
     box-shadow: 1px 1px 15px -5px black;
     transition: all 0.3s ease;
-  `
-  const Image= styled.img`
-  height: 100%;
-  width: 100%;
-  transition: all 0.3s ease;
-`
-const UploadButton= styled.button`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-`
-const Input= styled.input`
-  position: relative;
-  height: 130px;
-  width: 130px;
-  margin: 133px auto;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 1px 1px 15px -5px black;
-  transition: all 0.3s ease;
-`
+  `;
 
-const reference= useRef<any>(null)
-  var readURL = function(input:any) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function (e:any) {
-        //  $('.profile-pic').attr('src', e.target.result);
-        console.log(e.target.result, 'e.target.result')
-        }
-      reader.readAsDataURL(input.files[0]);
-    }
-  } 
- 
- 
+  const UploadButton = styled.button`
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    padding: 0px;
+  `;
+  const Input = styled.input`
+    position: relative;
+    height: 130px;
+    width: 130px;
+    margin: 133px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px -5px black;
+    transition: all 0.3s ease;
+  `;
+
+  const reference = useRef<any>(null);
+
   return (
+    <AvatarWrapper>
+      <UploadButton
+        type="button"
+        onClick={() => reference.current.click()}
+        className="upload-button"
+      >
+        {props.imgLink ? (
+          <Image
+            alt="Avatar Image"
+            style={{ transition: "all 0.3s ease", border: "12px" }}
+            layout="fill"
+            objectFit="contain"
+            src={props.imgLink}
+          />
+        ) : (
+          <div style={{ margin: "auto", display: "block" }}>
+            <Avatar
+              style={{ width: "100%", height: "100%" }}
+              src="/assets/images/avatar.png"
+            />
+          </div>
+        )}
+        {/* <Image src="" /> */}
+      </UploadButton>
 
-  <AvatarWrapper>
-     <UploadButton onClick={()=> reference.current.click()} className="upload-button">
-      <Avatar>H</Avatar>
-      {/* <Image src="" /> */}
-    </UploadButton>
-    <Input ref={reference} onChange={(event:any)=>readURL(event.target)} className="file-upload" type="file" accept="image/*"/>
-  </AvatarWrapper>
-  )
+      <Input
+        ref={reference}
+        onChange={props.changeFile}
+        className="file-upload"
+        type="file"
+        accept="image/jpeg, image/png, image/jpg"
+      />
+    </AvatarWrapper>
+  );
 }
 
 // export default ImageUploadCard;

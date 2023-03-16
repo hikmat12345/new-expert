@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: ${({ theme }:{theme: any}) =>   "#fff"};
+    background: ${({ theme }: { theme: any }) => "#fff"};
     color: hsl(192, 100%, 9%);
     font-family: 'Poppins', sans-serif;
     font-size: 1.15em;
@@ -53,7 +53,26 @@ const GlobalStyles = createGlobalStyle`
   .react-tel-input .flag-dropdown.open .selected-flag {
     background: #f1f6fa;
     border-radius: 3px 0 0 0;
-}
-`
+  }
 
-export default GlobalStyles
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+    margin: 0;  
+}
+
+input[type=number] {
+    -moz-appearance:textfield;  
+}
+@media(max-width:380px){
+  .react-tel-input .form-control { 
+     width: 228px !important; 
+  }
+  .react-tel-input {
+      width: 100% !important;  
+      padding: 10.9px 21px 13px 15px !important;  
+  }
+}
+`;
+
+export default GlobalStyles;

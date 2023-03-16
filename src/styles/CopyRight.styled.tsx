@@ -1,20 +1,19 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const CopyRight = styled.div` 
-width: 416px;
-height: 35px;
-position: relative;
-margin: auto;
- text-align:center;
-margin-top: 5rem;
-font-family: Poppins;
-font-size: 12px;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: normal; 
-color: #454c55;
-    @media (max-width: ${({ theme }) => theme.mobile}) {
-    
-    }
-`
+export const CopyRight = styled.div`
+  position: relative;
+  margin: auto;
+  text-align: center;
+  margin-top: 0rem;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  top: 4rem;
+  color: #454c55;
+  @media (max-width: 768px) {
+    top: 1rem;
+  }
+`;
