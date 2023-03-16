@@ -23,11 +23,8 @@
     "bootstrap": "^5.2.3",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
-<<<<<<< HEAD
     "font-awesome": "^4.7.0",
-=======
     "google-map-react": "^2.2.0",
->>>>>>> 3c4337664ca5ddb322f1a629e3c21ce6cde5287d
     "jwt-decode": "^3.1.2",
     "material-icons": "^1.13.1",
     "material-ui-phone-number": "^3.0.0",
@@ -39,13 +36,10 @@
     "react-calendar": "^4.0.0",
     "react-code-input": "^3.10.1",
     "react-dom": "18.2.0",
-<<<<<<< HEAD
     "react-icons": "^4.7.1",
     "react-modern-calendar-datepicker": "^3.1.6",
-=======
     "react-google-recaptcha-v3": "^1.10.1",
     "react-icons": "^4.8.0",
->>>>>>> 3c4337664ca5ddb322f1a629e3c21ce6cde5287d
     "react-phone-input-2": "^2.15.1",
     "react-query": "^3.39.3",
     "react-redux": "^8.0.5",
