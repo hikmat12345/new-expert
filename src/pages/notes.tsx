@@ -9,10 +9,26 @@ import { red } from '@mui/material/colors';
 import Checkbox from '@mui/material/Checkbox';
 import Radio from '@mui/material/Radio';
 import { useRouter } from "next/router";
+import { AiOutlineCloudUpload } from "react-icons/ai";
+import Swal from 'sweetalert2';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function appointments() {
+
+
+
+
+
+function notes() {
   const [counter, setCounter] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [file, setFile] = useState(null);
+  const [imageSrc, setImageSrc] = useState(null);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [videoFile, setVideoFile] = useState(null);
+  const [audio, setAudio] = useState(null);
+
+
 
 
 
@@ -33,6 +49,25 @@ function appointments() {
     setCounter(counter - 1);
   };
 
+  useEffect(() => {
+  
+    
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event:any) => {
+        setImageSrc(event.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  }, [file]);
+
+//   if (isSuccess) {
+//     Swal.fire({
+//       icon: 'success',
+//       title: 'Uploaded Successfully',
+//       text: 'Press okay to continue!',
+//     });
+//   }
 
   // material ui checkboxes 
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -76,7 +111,6 @@ function appointments() {
 
   ///// loading
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     // simulate an API call or other time-consuming operation
     setTimeout(() => {
@@ -93,7 +127,7 @@ function appointments() {
       </div>);
   }
 
-  /// video check perform + video upload code
+  /// video check perform + video upload code -----------------------------------------------------------------------------------------------------------
     const handleDurationChange = (event: any, file: any) => {
     console.log("handle duration event called .........");
     const video = event.target;
@@ -114,8 +148,13 @@ function appointments() {
       console.log("------------- video file respnose ---------------");
       console.log(response);
       setnote({...note, img:[response.result]})
+    //   setIsSuccess(true);
       console.log("------------- respnose ---------------");
-    }).catch(err => console.log(err))
+    }).catch(
+        
+        err => alert(err)
+        
+    )
     
     }
   }
@@ -123,6 +162,7 @@ function appointments() {
   const handleFileUpload = (event: any) => {
     console.log("handle file upload called ......");
     const file = event.target.files[0];
+    setVideoFile(file)
     const video = document.createElement('video');
 
     // Set up event listener to get the duration after the video has loaded
@@ -137,11 +177,11 @@ function appointments() {
 
 
 
-  // image upload code 
+  // image upload code -----------------------------------------------------------------------------------------------------------
   const handleImageFileChange = (event: any) => {
     console.log(event.target.files);
     let image = event.target.files[0];
-
+    setFile(image)
     let fd = new FormData();
     fd.append("imageFile", image);
 
@@ -151,6 +191,7 @@ function appointments() {
     }).then(res => res.json()).then((response: any) => {
       console.log("------------- respnose ---------------");
       setnote({...note, img: [response.result || "thisisjustdmyimageurl"]})
+    //   setIsSuccess(true);
       console.log("------------- respnose ---------------");
     }).catch(err => console.log(err))
 
@@ -158,11 +199,11 @@ function appointments() {
 
 
 
-    // audio audio code 
+// audio audio code -----------------------------------------------------------------------------------------------------------
     const handleAudioFileChange = (event: any) => {
       console.log(event.target.files);
       let audio = event.target.files[0];
-  
+      setAudio(audio);
       let fd = new FormData();
       fd.append("audioFile", audio);
   
@@ -172,6 +213,7 @@ function appointments() {
       }).then(res => res.json()).then((response: any) => {
         console.log("------------- respnose ---------------");
         setnote({...note, audio: [response.result || "thisisjustdmyimageurl"]})
+        // setIsSuccess(true);
         console.log("------------- respnose ---------------");
       }).catch(err => console.log(err))
   
@@ -182,6 +224,7 @@ function appointments() {
 
   return (
     <div className="col-md-12 ">
+
       <div className="container px-md-5 pt-2">
         <div className="col-md-12">
           <span className={styles.text_color}>
@@ -292,131 +335,6 @@ function appointments() {
                   How long have you had these spots?
                 </p>
               </div>
-              <div className="col-md-12 pt-2">
-                <input className="form-control" placeholder="Type Answer Here..." type="text" />
-              </div>
-              <div className="col-md-12 pt-2">
-                <p className={styles.app_text_paragrapg}>
-                 What part of your body is effected?
-                </p>
-              </div>
-              <div className="col-md-12 pt-2">
-                <input className="form-control" placeholder="Type Answer Here..." type="text" />
-              </div>
-          </div>
-          <div className="col-md-12 px-3 ">
-            <hr />
-          </div>
-          <div className="col-md-12 px-3">
-           <div className="row">
-            <div className="col-md-6">
-            <p className={styles.app_text_paragrapg}>
-                 Is skin around them dry or flaky?
-                </p>
-            </div>
-            <div className="col-md-6 text-end"> 
-            <label className={styles.yes_radio}>Yes</label><Radio
-                {...controlProps('e')}
-                sx={{
-                    color: red[800],
-                    '&.Mui-checked': {
-                    color: red[600],
-                    },
-                    '& .MuiSvgIcon-root': {
-                        fontSize: 18,
-                      },
-                }}
-                />&nbsp;&nbsp;&nbsp;
-                    <label className={styles.yes_radio}>No</label><Radio
-                {...controlProps('e')}
-                sx={{
-                    color: red[800],
-                    '&.Mui-checked': {
-                    color: red[600],
-                    },
-                    '& .MuiSvgIcon-root': {
-                        fontSize: 18,
-                      },
-                }}
-                />
-            </div>
-           </div>
-          </div>
-          <div className="col-md-12 px-3 ">
-            <hr />
-          </div>
-          <div className="col-md-12 px-3">
-           <div className="row">
-            <div className="col-md-6">
-            <p className={styles.app_text_paragrapg}>
-                 Does anyone in your family have these kind of spots?
-                </p>
-            </div>
-            <div className="col-md-6 text-end"> 
-            <label className={styles.yes_radio}>Yes</label><Radio
-                {...controlProps('e')}
-                sx={{
-                    color: red[800],
-                    '&.Mui-checked': {
-                    color: red[600],
-                    },
-                    '& .MuiSvgIcon-root': {
-                        fontSize: 18,
-                      },
-                }}
-                />&nbsp;&nbsp;&nbsp;
-                    <label className={styles.yes_radio}>No</label><Radio
-                {...controlProps('e')}
-                sx={{
-                    color: red[800],
-                    '&.Mui-checked': {
-                    color: red[600],
-                    },
-                    '& .MuiSvgIcon-root': {
-                        fontSize: 18,
-                      },
-                }}
-                />
-            </div>
-           </div>
-          </div>
-          <div className="col-md-12 px-3 ">
-            <hr />
-          </div>
-          <div className="col-md-12 px-3">
-           <div className="row">
-            <div className="col-md-6">
-            <p className={styles.app_text_paragrapg}>
-                 Have they gotten worse overtime?
-                </p>
-            </div>
-            <div className="col-md-6 text-end"> 
-            <label className={styles.yes_radio}>Yes</label><Radio
-                {...controlProps('e')}
-                sx={{
-                    color: red[800],
-                    '&.Mui-checked': {
-                    color: red[600],
-                    },
-                    '& .MuiSvgIcon-root': {
-                        fontSize: 18,
-                      },
-                }}
-                />&nbsp;&nbsp;&nbsp;
-                    <label className={styles.yes_radio}>No</label><Radio
-                {...controlProps('e')}
-                sx={{
-                    color: red[800],
-                    '&.Mui-checked': {
-                    color: red[600],
-                    },
-                    '& .MuiSvgIcon-root': {
-                        fontSize: 18,
-                      },
-                }}
-                />
-            </div>
-           </div>
           </div>
           <div className="col-md-12 px-3 ">
             <hr />
@@ -424,21 +342,93 @@ function appointments() {
           <div className="col-md-12 px-3">
             <div className="col-md-12 ">
                 <p className={styles.app_text_paragrapg}>
-                 Extra Note
+                 <b>Extra Note</b>
                 </p>
             </div>
             <div className="col-md-12 pt-2">
-                <input className="form-control" placeholder="Type Answer Here..." type="text" onChange={(e) => setnote({...note, notes: e.target.value})} />
+                <textarea className="form-control" placeholder="Type Answer Here..."  onChange={(e) => setnote({...note, notes: e.target.value})} ></textarea>
             </div>
+             {/* Upload Image code  */}
+            <div className="col-md-12 pt-3 ">
+                <p className={styles.app_text_paragrapg}>
+                 <b>Photo</b>
+                </p>
+            </div>
+            <div className="col-md-12 pt-3">
+                <div className="row">
+                    <div className="col-md-2 text-center">
+                    <label className="display_file_upload1">
+                 <span className="icon_red_upload_cloud">  
+                  <AiOutlineCloudUpload /></span> <br/>
+                      Upload Image
+                    <input type="file" className={styles.background_color_red1} placeholder="Upload Image" multiple accept="image/*" onChange={e => handleImageFileChange(e)}  />
+            
+                    </label>
+                    </div>
+                    <div className="col-md-2 ">
+                     {imageSrc && <img src={imageSrc} className="img-fluid img_width_setting" alt="Uploaded image" />}
+                            
+                    </div>
+                </div>
+            </div>
+            {/* Upload video code  */}
+            <div className="col-md-12 pt-3 ">
+                <p className={styles.app_text_paragrapg}>
+                 <b>Video</b>
+                </p>
+            </div>
+            <div className="col-md-12 pt-3">
+                <div className="row">
+                    <div className="col-md-2 text-center">
+                    <label className="display_file_upload1">
+                 <span className="icon_red_upload_cloud">  
+                  <AiOutlineCloudUpload /></span> <br/>
+                      Upload Video
+                    <input type="file" className={styles.background_color_red1} placeholder="Upload Videos" multiple accept="video/*" onChange={e => handleFileUpload(e)}  />
+            
+                    </label>
+                    </div>
+                    <div className="col-md-2 ">
+                    {videoFile && (
+                            <video width="320" height="240" controls>
+                            <source src={URL.createObjectURL(videoFile)} type={videoFile.type} />
+                            </video>
+                        )}
+                            
+                    </div>
+                </div>
+            </div>
+            <div className="col-md-12 pt-3">
+                <div className="row">
+                    <div className="col-md-6">
+                    <p className={styles.app_text_paragrapg}>
+                 <b>Voice</b>
+                </p>
+                    </div>
+                    <div className="col-md-6 justify_con">
+                    <label className="display_file_upload">
+                      Upload Audio
+                    <input type="file" className={styles.background_color_red1} placeholder="Upload Audio" onChange={e => handleAudioFileChange(e)}  accept="audio/*" />
+                    </label>
+                    </div>
+                </div>
+                <div className="col-md-12 pt-3">
+                 {audio && (
+                    <audio  className="audio_setting" controls>
+                    <source src={URL.createObjectURL(audio)} type="audio/mp3" />
+                    </audio>
+                )}
+                </div>
+            </div>
+            
           </div>
           <div className="col-md-12 text-end px-3 pt-2">
             <div className="row">
                 <div className="col-md-6 text-start">
-                  <div className={styles.display_vertical}>
+                  {/* <div className={styles.display_vertical}>
                     <label className="display_file_upload">
-                       Upload Video
+                      Upload Video
                     <input type="file" className={styles.background_color_red1} placeholder="Upload Videos" accept="video/*" onChange={(e)=>handleFileUpload(e)}  />
-                    {/* <img src="../assets/appointment/video.png" className={styles.video_icon} />   */}
             
                     </label>
                     &nbsp;&nbsp;&nbsp;
@@ -446,17 +436,14 @@ function appointments() {
                     <label className="display_file_upload">
                       Upload Image
                     <input type="file" className={styles.background_color_red1} placeholder="Upload Images" onChange={e => handleImageFileChange(e)}  accept="image/*" />
-                    {/* <img src="../assets/appointment/picture.png" className={styles.video_icon} />   */}
           
                     </label>
                     &nbsp;&nbsp;&nbsp;
                     <label className="display_file_upload">
                       Upload Audio
                     <input type="file" className={styles.background_color_red1} placeholder="Upload Audio" onChange={e => handleAudioFileChange(e)}  accept="audio/*" />
-                    {/* <img src="../assets/appointment/picture.png" className={styles.video_icon} />   */}
-          
                     </label>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="col-md-6">
                 <button onClick={()=>appointmentdoc()} className={styles.background_color_red}>
@@ -472,4 +459,4 @@ function appointments() {
   );
 }
 
-export default appointments;
+export default notes;

@@ -53,7 +53,6 @@ const GlobalStyles = createGlobalStyle`
   .react-tel-input .flag-dropdown.open .selected-flag {
     background: #f1f6fa;
     border-radius: 3px 0 0 0;
-<<<<<<< HEAD
 }
 .Calendar__day.-selected
 {
@@ -72,22 +71,66 @@ input[type="file"] {
 }
 .display_file_upload
 {
-  margin-top:10px;
+  // margin-top:10px;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 2px;
   padding-top: 2px;
   background: rgb(251, 228, 228); 
-  display: table;
   border-radius: 5px;
   color: red;
   font-size: 80%;
   
 }
-`
-=======
+.display_file_upload1
+{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  padding-top: 25px;
+  padding-bottom: 45px;
+  display: table;
+  border-radius: 10px;
+  color: red;
+  font-size: 80%;
+  width: 100%;
+  height: 100%;
+  border: 1px solid lightgray;
+  
+}
+
+.justify_con
+{
+  display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.audio_setting
+{
+  width: 100%;
+  border-radius: 0 !important;
+ 
+}
+
+
+
+
+
+.img_width_setting
+{
+  height: 25vh;
+  width: 30vw;
+  border-radius: 10px;
+}
+
+.icon_red_upload_cloud
+{
+  font-size: 260%;
+  color: #ccd2d8;
+}
+
   }
->>>>>>> 3c4337664ca5ddb322f1a629e3c21ce6cde5287d
 
   input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -97,6 +140,25 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield;  
+}
+video {
+  width: 100% !important;
+  height: 100%;
+  object-fit: fill;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.video-container
+{
+  height: 80vh;
+    width: 100%;
+    object-fit: fill;
+}
+
+.right_margin
+{
+  left: auto;
 }
 @media(max-width:380px){
   .react-tel-input .form-control { 

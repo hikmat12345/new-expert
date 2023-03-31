@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-export const   LoadAction= async(obj:object)=> {
-    try {
-      const response = await fetch('http://localhost:8000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(obj)
-      });
-      const data = await response.json();
-      const token = data.token;
-      localStorage.setItem('token', token); // Store token in localStorage
-      return token;
-    } catch (error) {
-      console.error(error);
-      return false;
-    }
-  }
-=======
 import axios from "axios";
 export const LoadAction = async (mobileNumber: number) => {
   try {
@@ -341,4 +321,3 @@ export const ForgotPasswordAction = async (mobileNumber: number) => {
     return error;
   }
 };
->>>>>>> 3c4337664ca5ddb322f1a629e3c21ce6cde5287d

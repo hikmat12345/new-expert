@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import styled from "styled-components"
 export const Message=styled.div<{color?:string}>`
  font-size: 14px;
@@ -18,9 +17,8 @@ export const Message=styled.div<{color?:string}>`
  opacity: 0;
  transform: rotateX(120deg);
  transform-origin: 50% 100%; 
-=======
 import styled from "styled-components";
-export const Message = styled.div<{ type?: boolean }>`
+export const Message = styled.div<{ type?: boolean }>
   font-size: 14px;
   font-weight: 500;
   font-stretch: normal;
@@ -31,7 +29,6 @@ export const Message = styled.div<{ type?: boolean }>`
   text-align: center;
   padding: 8px;
   animation: message 5s infinit;
->>>>>>> 3c4337664ca5ddb322f1a629e3c21ce6cde5287d
 
   display: block;
   animation: show 0.01s forwards, pop-word 1.5s forwards;
