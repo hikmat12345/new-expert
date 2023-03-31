@@ -13,7 +13,7 @@ const Input = (
     <div style={{ margin: "auto" }}>
       <PhoneInput
         style={{
-          width: "340px",
+          width: props.width ? props.width : "340px",
           position: "relative",
           fontSize: "14px",
           fontFamily: "Poppine",

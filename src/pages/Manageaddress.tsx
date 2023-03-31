@@ -10,33 +10,33 @@ import Dashboard from "@/Components/Layout/Dashboard";
 const Manageaddress = () => {
   const sideMenu: any = [
     {
-      link: "/",
+      link: "/profile",
       text: "proifle",
-      icon: "/assets/icons/mail-icon.svg",
+      icon: "/assets/icons/user-white.svg",
       active: true,
     },
     {
       link: "/",
       text: "Addresses",
-      icon: "/assets/icons/mail-icon.svg",
+      icon: "/assets/icons/location-black.svg",
       active: false,
     },
     {
       link: "/",
       text: "Order",
-      icon: "/assets/icons/mail-icon.svg",
+      icon: "/assets/icons/down-black.svg",
       active: false,
     },
     {
       link: "/",
       text: "Setting",
-      icon: "/assets/icons/mail-icon.svg",
+      icon: "/assets/icons/go-black.svg",
       active: false,
     },
     {
       link: "/",
       text: "Logout",
-      icon: "/assets/icons/mail-icon.svg",
+      icon: "/assets/icons/down-black.svg",
       active: false,
     },
   ];

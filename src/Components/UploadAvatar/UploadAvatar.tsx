@@ -166,8 +166,8 @@ export default function ImageUploadCard(props?: any) {
 
   const AvatarWrapper = styled.div`
     position: relative;
-    height: 130px;
-    width: 130px;
+    height: 105px;
+    width: 105px;
     margin: 23px auto 1px auto;
     border-radius: 50%;
     overflow: hidden;

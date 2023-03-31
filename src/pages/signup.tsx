@@ -37,7 +37,7 @@ function SignUp() {
     setLoader(true);
     setErrorMessage("");
     try {
-      LoadAction(phoneNumber).then(async (result: any) => {
+      LoadAction(phoneNumber, authToken).then(async (result: any) => {
         console.log(authToken, "authToken");
         setLoader(false);
         setTokebRefresh((r) => !r);
