@@ -12,16 +12,21 @@ export default function InputField({
   isPasswordField = false,
   type = "text",
   message = "",
+  width,
+  widthInput,
+  backgroundColor,
 }: {
   onChange?: any;
   passwordLabel?: string;
   placeholder: string;
   indicateIcon: string;
   required?: boolean;
-
+  width?: string;
   isPasswordField?: boolean;
   type?: string;
   message?: string;
+  widthInput?: string;
+  backgroundColor?: string;
 }) {
   const [passwordIcon, setPasswordIcon] = useState(false);
   const ref: any = useRef();
@@ -46,7 +51,7 @@ export default function InputField({
         style={{
           margin: "auto",
           display: "block",
-          width: "340px",
+          width: width ? width : "340px",
           position: "relative",
         }}
       >
@@ -59,7 +64,7 @@ export default function InputField({
               left: "2px",
               bottom: "1px",
               zIndex: "999",
-              backgroundColor: "#f1f6fa",
+              backgroundColor: backgroundColor ? backgroundColor : "#f1f6fa",
               height: "46px",
               borderRadius: "12px 0px 0px 6px",
               width: "46px",
@@ -68,8 +73,10 @@ export default function InputField({
           />
         )}
         <InputTag
+          width={widthInput}
           padding="6.9px 40px 6px 54.5px"
           ref={ref}
+          backgroundColor={backgroundColor}
           placeholder={placeholder}
           type={type}
           onChange={onChange}

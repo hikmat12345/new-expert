@@ -1,10 +1,21 @@
 import axios from "axios";
-export const LoadAction = async (mobileNumber: number) => {
+export const LoadAction = async (
+  mobileNumber: number,
+  recaptacToken: string
+) => {
   try {
     var data = JSON.stringify({
       mobileNumber: mobileNumber,
       countryId: 1,
       deviceId: navigator.userAgent,
+      isMobile: false,
+      raptchaToken: recaptacToken,
+      isAndroidRequest: false,
+      mobileCaptchaData: {
+        projectId: "findanexpert-client",
+        recaptchaAction: "LOGIN",
+        recaptchaSiteKey: "",
+      },
     });
 
     var config = {
@@ -312,6 +323,105 @@ export const ForgotPasswordAction = async (mobileNumber: number) => {
         "Content-Type": "application/json",
       },
       data: data,
+    };
+
+    const result = await axios(config);
+    return result.data;
+  } catch (error) {
+    console.error(error, "error");
+    return error;
+  }
+};
+
+export const getUserDetail = async (id: number) => {
+  try {
+    var config = {
+      method: "get",
+      url: `https://microsignupapi-preprod.findanexpert.net/signup_svc/pv/users/getUserById?Id=${id}`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const result = await axios(config);
+    return result.data;
+  } catch (error) {
+    console.error(error, "error");
+    return error;
+  }
+};
+
+export const UploadUserImage = async (userId?: any, fileInput?: any) => {
+  try {
+    const form = new FormData();
+    form.append("AllFilesToUpload", fileInput);
+    const environment = "prepord";
+    var config = {
+      method: "put",
+      url: `https://microsignupapi-preprod.findanexpert.net/signup_svc/pv/users/changeUserImage?UserId=${userId}&environment=${environment}`,
+      headers: { "Content-Type": "multipart/form-data" },
+      data: form,
+    };
+    const result = await axios(config);
+    return result.data;
+  } catch (error) {
+    console.error(error, "error");
+    return error;
+  }
+};
+
+export const updateBasicProfile = async (
+  id: number,
+  lastname: string,
+  firstname: string
+) => {
+  try {
+    var config = {
+      method: "get",
+      url: `https://microsignupapi-preprod.findanexpert.net/signup_svc/pv/users/updateBasicProfile?UserId=${id}&FirstName=${firstname}&LastName=${lastname}`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const result = await axios(config);
+    return result.data;
+  } catch (error) {
+    console.error(error, "error");
+    return error;
+  }
+};
+
+export const updateEmails = async (
+  id: number,
+  text: string,
+  type: number,
+  ModifiedBy: any
+) => {
+  try {
+    var config = {
+      method: "put",
+      url: `https://microsignupapi-preprod.findanexpert.net/signup_svc/pv/users/updateEmails?UserId=${id}&text=${text}&type=${type}&ModifiedBy=${ModifiedBy}`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const result = await axios(config);
+    return result.data;
+  } catch (error) {
+    console.error(error, "error");
+    return error;
+  }
+};
+
+export const updateMobile = async (id: number, text: string) => {
+  try {
+    var config = {
+      method: "put",
+      url: `https://microsignupapi-preprod.findanexpert.net/signup_svc/pv/users/updateMobile?UserId=${id}&text=${text}&type=2`,
+      headers: {
+        "Content-Type": "application/json",
+      },
     };
 
     const result = await axios(config);

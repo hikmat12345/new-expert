@@ -7,10 +7,9 @@ import { LoginContainer } from "@/styles/Container.styled";
 import { CopyRight } from "@/styles/CopyRight.styled";
 import { Flex, Item } from "@/styles/Flex.styled";
 import { Message } from "@/styles/message.style";
-
+// import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import styled from "styled-components";
 
 function CreatePassword() {
   const [errorMessage, setErrorMessage] = React.useState({
@@ -108,6 +107,7 @@ function CreatePassword() {
                 pathname: "/personal-information",
                 query: { ...query },
               });
+          // Cookies.set("token", result?.token, { expires: 7 });
         } else {
           setErrorMessage({ type: false, message: result?.message });
         }
