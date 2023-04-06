@@ -1,10 +1,10 @@
 import React from "react";
-import img1 from "../public/assets/images/img7.png";
+import img1 from "../public/assets/Images/img7.png";
 import Image from "next/image";
 import { AiOutlineRight } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { AiOutlinePlus } from "react-icons/ai";
-import styles from "../../styles/stylescss/Choose-services.module.css";
+import styles from "../styles/stylescss/Choose-services.module.css";
 const Chooseservices = () => {
   return (
     <>
@@ -29,8 +29,8 @@ const Chooseservices = () => {
                   </a>
                 </div>
                 <div className="col-md-3">
-                  <Image
-                    src={img1}
+                  <img
+                    src="../assets/Images/img7.png"
                     height={100}
                     width={200}
                     alt="create account"

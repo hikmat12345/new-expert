@@ -17,7 +17,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-
+interface VideoI {
+  type: string;
+  src: string;
+}
 
 function notes() {
   const [counter, setCounter] = useState(0);
@@ -25,7 +28,7 @@ function notes() {
   const [file, setFile] = useState(null);
   const [imageSrc, setImageSrc] = useState(null);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [videoFile, setVideoFile] = useState(null);
+  const [videoFile, setVideoFile] = useState<any>(null);
   const [audio, setAudio] = useState(null);
 
 

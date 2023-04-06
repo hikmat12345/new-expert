@@ -24,7 +24,7 @@ export const Message = styled.div<{ type?: boolean }>
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
-  color: ${({ type }) => (type == true ? "green" : "red")};
+  color: green;
   padding: 8px;
   text-align: center;
   padding: 8px;

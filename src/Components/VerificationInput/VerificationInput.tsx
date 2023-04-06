@@ -33,6 +33,8 @@ export const FAECodeInput = ({
         type={"number"}
         fields={fields}
         onChange={getValue}
+        name="somename"
+        inputMode="tel"
       />
     </div>
   );

@@ -1,4 +1,4 @@
-const { getSession } = require("next-auth/client");
+import {getSession} from "next-auth/react";
 
 import { GetServerSideProps } from "next";
 
@@ -9,8 +9,7 @@ interface Props {
     };
   };
 }
-
-export const getServerSideProps: GetServerSideProps<Props> = async (
+export const getServerSideProps: GetServerSideProps<any> = async (
   context
 ) => {
   const session = await getSession(context);
@@ -29,10 +28,12 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
   };
 };
 
-export default function ProtectedPage({ session }: Props) {
+
+export default function ProtectedPage({ session }: any) {
   return (
     <div>
       <p>User ID: {session.user.id}</p>
     </div>
   );
 }
+

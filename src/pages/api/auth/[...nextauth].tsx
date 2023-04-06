@@ -1,4 +1,6 @@
-const { signIn, signOut, getSession } = require("next-auth/client");
+// const { signIn, signOut, getSession } = require("next-auth/client");
+// const { signIn, signOut, getSession } = require("next-auth/react");
+import { signIn, signOut, getSession} from "next-auth/react";
 import axios from "axios";
 
 export default async function auth(req: any, res: any) {

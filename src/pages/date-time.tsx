@@ -108,7 +108,7 @@ function Datetime() {
             <div className="col-md-4">
             <Calendar
             value={selectedDay}
-            onChange={setSelectedDay}
+            // onChange={setSelectedDay}
             colorPrimary="#EC1E27" // added this
             colorPrimaryLight="##EC1E27"
             calendarClassName={styles.responsive_calendar}

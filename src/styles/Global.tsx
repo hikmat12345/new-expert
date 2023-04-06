@@ -113,9 +113,22 @@ input[type="file"] {
  
 }
 
+.img_width_bannerg
+{
+  width: 30%;
+}
 
+.btn_style_light
+{
+  background-color: white;
+  border: 1px solid lightgray;
+}
 
-
+.img_fix_banner
+{
+  height: 60vh;
+  border-radius: 10px;
+}
 
 .img_width_setting
 {
@@ -160,6 +173,149 @@ video {
 {
   left: auto;
 }
+.display_flexx
+{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.catagories_width
+{
+  width: 10%;
+}
+
+.border_container
+{
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.heading_color
+{
+  color: #444;
+}
+
+.img_width_packages
+{
+  width: 70%;
+}
+.font_size_2
+{
+  font-size: 12px;
+  color: #ccd2d8;
+}
+
+.font_size_4
+{
+  font-size: 14px;
+}
+
+.poly_width
+{
+  width: 30%;
+}
+
+.position_top
+{
+  margin-top: -28px;
+  font-size: 12px;
+  color: white;
+}
+.save_text
+{
+  font-size: 6px;
+}
+
+.border_right
+{
+  border-right: 1px solid lightgray
+}
+
+.text_300
+{
+  font-size: 8px;
+}
+
+.bcakground_color_card
+{
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
+
+.save_text1
+{
+  color: #292929;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.get_now_text1
+{
+  font-size: 12px;
+}
+
+.main_heading_service
+{
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+}
+
+.sub_heading_service
+{
+  font-size: 14px;
+  color: #6c6c6c;
+}
+
+ul {
+  padding-left: 1rem;
+}
+
+.font_ul
+{
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.font_size_3
+{
+  font-size: 16px;
+  color: #444;
+}
+
+.display_flexx_services
+{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.img_width_ind
+{
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.box_width
+{
+  width: 10%;
+}
+
+.border_card_ind
+{
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cursor_back
+{
+  cursor: pointer;
+}
+
 @media(max-width:380px){
   .react-tel-input .form-control { 
      width: 228px !important; 

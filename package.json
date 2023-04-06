@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -30,7 +30,7 @@
     "material-icons": "^1.13.1",
     "material-ui-phone-number": "^3.0.0",
     "next": "^13.1.6",
-    "next-auth": "^4.20.1",
+    "next-auth": "^4.21.0",
     "next-i18next": "^13.1.5",
     "react": "18.2.0",
     "react-bootstrap": "^2.7.2",
@@ -49,6 +49,8 @@
     "typescript": "4.9.5"
   },
   "devDependencies": {
+    "@types/google-map-react": "^2.1.7",
+    "@types/proxy-from-env": "^1.0.1",
     "@types/react": "18.0.28",
     "@types/styled-components": "^5.1.26",
     "babel-plugin-styled-components": "^2.0.7"

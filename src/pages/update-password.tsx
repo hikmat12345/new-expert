@@ -207,7 +207,9 @@ function Updatepassword() {
           {loader ? (
             <Loader status={loader} />
           ) : (
-            <Message type={errorMessage.type}> {errorMessage.message} </Message>
+            <Message 
+            // type={errorMessage.type}
+            > {errorMessage.message} </Message>
           )}
         </form>
       </div>

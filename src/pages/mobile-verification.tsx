@@ -158,7 +158,9 @@ function MobileVerification() {
               {loader ? (
                 <Loader status={loader} />
               ) : (
-                <Message type={errorMessage.type}>
+                <Message 
+                // type={errorMessage.type}
+                >
                   {" "}
                   {errorMessage.message}{" "}
                 </Message>
